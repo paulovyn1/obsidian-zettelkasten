@@ -8,11 +8,12 @@ Com ela instalada, o Claude nunca cria uma nota solta no seu vault: toda nota na
 
 ## O que a skill faz
 
+- **Onboarding automático** — no primeiro uso, mapeia o SEU vault (pastas, Âncoras, produtos, convenções) e salva tudo em `memoria.md`. Se o vault for novo, oferece a estrutura recomendada Triwer
 - **Classifica** cada nota no tipo e pasta corretos do vault
 - **Frontmatter obrigatório** — título como afirmação/pergunta, tags, status (`seedling` → `growing` → `evergreen`), notas relacionadas
 - **Conexões mínimas garantidas** — toda nota permanente sai com 2 links de saída, 1 link de entrada e ao menos 1 Âncora (MOC)
 - **Atualiza as Âncoras progressivamente** — cada nota criada melhora o vault
-- **Economia de tokens** — estrutura do vault hardcoded, sem chamadas desnecessárias de leitura
+- **Economia de tokens** — o vault é mapeado uma única vez no onboarding; depois disso, sem chamadas desnecessárias de leitura
 - **Relatório final** — mostra o que foi criado, linkado e o que ficou pendente
 
 ---
@@ -64,7 +65,7 @@ Rode o mesmo comando de instalação — o script detecta a versão instalada e 
 - **Claude Code** ou **Claude Desktop** instalado ([baixar aqui](https://claude.ai/download))
 - **Plano pago do Claude** (Pro ou superior)
 - **Obsidian** conectado ao Claude via MCP (ferramentas `obsidian:create_or_update_note`, `obsidian:append_to_note`, `obsidian:search_notes`)
-- Vault organizado no **padrão Triwer** (estrutura de pastas descrita no SKILL.md)
+- Qualquer vault serve — o onboarding mapeia a sua estrutura; se o vault for novo, a skill oferece a estrutura recomendada Triwer
 
 ---
 
@@ -79,6 +80,8 @@ Não tem comando — a skill é **automática**. Depois de instalada, sempre que
 
 ...o Claude segue o fluxo completo: classifica, escreve o frontmatter, conecta e entrega o relatório.
 
+**No primeiro uso**, o onboarding inicia automaticamente: a skill mapeia seu vault, identifica (ou cria) suas Âncoras, registra seus produtos e salva tudo em `memoria.md`. Leva uns 3 minutos e só acontece uma vez.
+
 ---
 
 ## Estrutura instalada
@@ -87,10 +90,14 @@ Não tem comando — a skill é **automática**. Depois de instalada, sempre que
 ~/.claude/skills/obsidian-zettelkasten/
 ├── SKILL.md
 ├── VERSION
+├── memoria.md                    ← criado no onboarding (seus dados pessoais)
 └── references/
     ├── templates.md              ← templates completos por tipo de nota
-    └── connection-patterns.md    ← lógica de conexão por tema
+    ├── connection-patterns.md    ← lógica de conexão e roteamento
+    └── estrutura-recomendada.md  ← estrutura de vault sugerida no onboarding
 ```
+
+> `memoria.md` guarda o mapa do **seu** vault — nunca é sobrescrito em atualizações.
 
 ---
 

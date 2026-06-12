@@ -77,6 +77,14 @@ Write-Color "→ Baixando obsidian-zettelkasten..." "Yellow"
 Download-File "SKILL.md" "$SKILL_DIR\SKILL.md"
 Download-File "references/templates.md" "$SKILL_DIR\references\templates.md"
 Download-File "references/connection-patterns.md" "$SKILL_DIR\references\connection-patterns.md"
+Download-File "references/estrutura-recomendada.md" "$SKILL_DIR\references\estrutura-recomendada.md"
+
+# memoria.md: nunca sobrescrever (dados pessoais do usuário)
+if (Test-Path "$SKILL_DIR\memoria.md") {
+    Write-Color "   ↳ memoria.md mantido (seus dados pessoais)" "White"
+} else {
+    Write-Color "   ↳ memoria.md será criado no primeiro uso (onboarding)" "White"
+}
 
 # Salvar versão instalada
 Set-Content -Path $VERSION_FILE -Value $REMOTE_VERSION
@@ -97,6 +105,6 @@ Write-Host ""
 Write-Host "  2. Abra uma nova conversa e peça, por exemplo:"
 Write-Color "     `"salva essa ideia no Obsidian`"" "Yellow"
 Write-Host ""
-Write-Host "  3. A skill é acionada automaticamente em toda"
-Write-Host "     criação ou atualização de notas no vault."
+Write-Host "  3. No primeiro uso, o onboarding mapeia o seu vault"
+Write-Host "     automaticamente (leva uns 3 minutos, só uma vez)."
 Write-Host ""

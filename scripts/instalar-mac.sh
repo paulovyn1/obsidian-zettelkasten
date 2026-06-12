@@ -85,6 +85,14 @@ echo -e "${YELLOW}→ Baixando obsidian-zettelkasten...${NC}"
 download_file "SKILL.md" "$SKILL_DIR/SKILL.md"
 download_file "references/templates.md" "$SKILL_DIR/references/templates.md"
 download_file "references/connection-patterns.md" "$SKILL_DIR/references/connection-patterns.md"
+download_file "references/estrutura-recomendada.md" "$SKILL_DIR/references/estrutura-recomendada.md"
+
+# memoria.md: nunca sobrescrever (dados pessoais do usuário)
+if [ -f "$SKILL_DIR/memoria.md" ]; then
+    echo -e "   ↳ memoria.md mantido (seus dados pessoais)"
+else
+    echo -e "   ↳ memoria.md será criado no primeiro uso (onboarding)"
+fi
 
 # Salvar versão instalada
 echo "$REMOTE_VERSION" > "$VERSION_FILE"
@@ -105,6 +113,6 @@ echo ""
 echo -e "  2. Abra uma nova conversa e peça, por exemplo:"
 echo -e "     ${YELLOW}\"salva essa ideia no Obsidian\"${NC}"
 echo ""
-echo -e "  3. A skill é acionada automaticamente em toda"
-echo -e "     criação ou atualização de notas no vault."
+echo -e "  3. No primeiro uso, o onboarding mapeia o seu vault"
+echo -e "     automaticamente (leva uns 3 minutos, só uma vez)."
 echo ""

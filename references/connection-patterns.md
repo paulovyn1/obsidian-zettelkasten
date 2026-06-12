@@ -1,64 +1,73 @@
-# Padrões de Conexão — Vault Triwer
+# Padrões de Conexão — Método Triwer
 
-## Âncoras disponíveis (MOCs reais do vault)
+> As Âncoras reais do vault e seus temas estão registrados em `memoria.md` (seção
+> **Âncoras**). Esta referência define a *lógica* de roteamento — aplicá-la sempre
+> usando as Âncoras, produtos e notas-índice do próprio usuário.
 
-| Âncora | Temas que gravitam em torno |
+## Como escolher a Âncora
+
+1. Identificar o tema central da nota (1 frase)
+2. Comparar com os temas listados ao lado de cada Âncora em `memoria.md`
+3. Linkar a Âncora com maior sobreposição semântica — em caso de empate, linkar as duas
+4. Se nenhuma Âncora cobrir o tema → oferecer criar uma nova (template `moc`) e
+   registrá-la em `memoria.md`
+
+### Exemplos de gravitação temática
+
+| Se o vault tiver uma Âncora de... | Temas que gravitam em torno |
 |---|---|
-| `[[Marketing]]` | Instagram, carrossel, stories, conteúdo, DOPA, headlines |
-| `[[Desejo]]` | desejo, antecipação, emoção, compra, gatilhos |
-| `[[Lançamento]]` | lançamento pago, CPL, webinário, checklist, lançamento perpétuo |
-| `[[vendas]]` | oferta, CTA, copy, página de vendas, conversão |
-| `[[Narrativas]]` | histórias, resultados de alunos, storytelling, prova social |
-| `[[Estratégia]]` | frameworks, método, sistemas, posicionamento |
-| `[[AI]]` | IA, agentes, automação, MCP, GPT, Claude |
-| `[[Antecipação]]` | expectativa, aquecimento, pré-lançamento |
-| `[[perpétuo]]` | evergreen, funil perpétuo, produto de entrada |
-| `[[Gestão]]` | operação, time, processos, empresa |
-| `[[Produtividade]]` | Zettelkasten, second brain, sistemas pessoais |
-| `[[estudos]]` | aprendizado, livros, referências, pesquisa |
+| Marketing/Conteúdo | Instagram, carrossel, stories, headlines, audiência |
+| Vendas | oferta, CTA, copy, página de vendas, conversão |
+| Lançamento | CPL, webinário, checklist, aquecimento, perpétuo |
+| Narrativas/Histórias | storytelling, resultados de clientes, prova social |
+| Estratégia | frameworks, método, sistemas, posicionamento |
+| IA/Tecnologia | agentes, automação, MCP, prompts |
+| Gestão | operação, time, processos, empresa |
+| Produtividade | Zettelkasten, second brain, sistemas pessoais |
+| Estudos | aprendizado, livros, referências, pesquisa |
 
 ---
 
 ## Roteamento por tipo de conteúdo
 
-### Frameworks Triwer (DOPA, ICCPA, OPR, MDI, Headlines)
-- Âncora: `[[Estratégia]]` + `[[Marketing]]`
-- Pasta: `04. 🧩 Recursos/Notas/4. Permanentes/` ou `6. Estratégias/`
+### Frameworks e métodos (próprios ou aprendidos)
+- Âncora: a de estratégia/método + a do tema de aplicação
+- Pasta: Permanentes ou Estratégias
 - Linkar para: produto onde o framework é aplicado + literatura que o originou
 
-### Produtos (SDS, Sim Inevitável, Malha de Ouro, Mentoria Arco)
-- Âncora: Âncora do tema principal do produto
-- Pasta: `03. 📽️ Projetos/Produtos Triwer/[produto]/`
-- Linkar para: frameworks usados + histórias de resultados + iscas
+### Produtos e ofertas (os registrados em `memoria.md`)
+- Âncora: a do tema principal do produto
+- Pasta: Projetos/[produto]
+- Linkar para: frameworks usados + histórias de resultados + iscas relacionadas
 
 ### Lançamentos e campanhas
-- Âncora: `[[Lançamento]]`
-- Pasta: `03. 📽️ Projetos/Lançamentos/`
+- Âncora: a de lançamento/vendas
+- Pasta: Projetos (subpasta de lançamentos, se existir)
 - Linkar para: produto + checklist + debriefing anterior se existir
 
-### Insights de mentoria (Mentoria Arco)
-- Âncora: tema do insight (ex: `[[vendas]]`, `[[Estratégia]]`)
-- Pasta: `04. 🧩 Recursos/Notas/4. Permanentes/` (se insight atômico) ou `03. 📽️ Projetos/Produtos Triwer/Mentoria Arco/`
+### Insights de mentoria, consultoria ou atendimento
+- Âncora: tema do insight
+- Pasta: Permanentes (se insight atômico) ou Projetos/[produto relacionado]
 - Linkar para: princípio geral extraído + produto relacionado
 
-### Conteúdo de StratClass / lives
-- Âncora: `[[Marketing]]` + âncora do tema
-- Pasta: `03. 📽️ Projetos/Conteúdo Gerado/Estrateclass/`
+### Conteúdo de lives, aulas e eventos
+- Âncora: a de marketing/conteúdo + âncora do tema
+- Pasta: Projetos (subpasta de conteúdo gerado, se existir) ou Permanentes
 - Linkar para: frameworks usados + produto promovido
 
-### Histórias e resultados de alunos
-- Âncora: `[[Narrativas]]`
-- Pasta: `04. 🧩 Recursos/Notas/4. Permanentes/` (seguir padrão Triwer — História A0x / H0x)
-- Linkar para: `[[Triwer — Índice de Histórias]]` + produto + âncora temática
+### Histórias e resultados de alunos/clientes
+- Âncora: a de narrativas/histórias (ou a temática mais próxima)
+- Pasta: Permanentes
+- Linkar para: índice de histórias (se registrado em `memoria.md`) + produto + âncora temática
 
 ### Iscas e CTAs
-- Âncora: `[[Marketing]]` + `[[vendas]]`
-- Pasta: `04. 🧩 Recursos/Notas/4. Permanentes/`
-- Linkar para: `[[Triwer — Iscas e CTAs]]` + produto específico se houver
+- Âncora: a de marketing + a de vendas
+- Pasta: Permanentes
+- Linkar para: índice de iscas e CTAs (se registrado em `memoria.md`) + produto específico
 
 ### Referências externas (livros, artigos, estudos)
-- Âncora: `[[estudos]]` + âncora temática
-- Pasta: `04. 🧩 Recursos/Notas/2. Referência/[Livros | Artigos | Estudos completos]/`
+- Âncora: a de estudos (ou a temática mais próxima)
+- Pasta: Referência (subpasta por tipo, se existir)
 - Linkar para: notas permanentes geradas a partir dessa referência
 
 ---
@@ -67,6 +76,6 @@
 
 - `related:` vazio ou com apenas 1 item em nota `permanent`
 - Nenhuma Âncora linkada
-- Nota de produto sem link para pasta do produto
-- Nota de história sem link para `[[Triwer — Índice de Histórias]]`
-- Nota de isca sem link para `[[Triwer — Iscas e CTAs]]`
+- Nota de produto sem link para a pasta/nota do produto
+- Nota de história sem link para o índice de histórias (quando registrado na memória)
+- Nota de isca sem link para o índice de iscas e CTAs (quando registrado na memória)
